@@ -44,5 +44,26 @@ from here select the import json option and then (https://github.com/joel909/Sma
 YOU ARE DONE WITH SETTING YOUR FIREBASE DATABASE 
 
 #Setting up MQTT Server(ON HiveMq)
+GO to the hiveMQ cloud website(https://console.hivemq.cloud/)
+1) Sign in to the HiveMQ cloud and create a SERVERLESS Cluster for MQTT
+
+   <img width="697" alt="image" src="https://github.com/joel909/Smart_Watering_Device_iot_esp/assets/89447078/683590de-8703-4f0c-83ce-072629f75b57">
+
+   This serverless is the only free option so please choose this
+
+2)next we will need the connection information like the (cluster URL,Port)
+   2.1) To get the cluster URI/URL and the port number  go to the cluster you created and then go to overview page and then there you can see your cluster URL along with your port number copy the Cluster URL and put this in the mqtt server variable in line 23 and then you can copy the port number and replace it in line 117 I have put a default port number(883) there if your port number is different you can replace 8883 with your port number.
+
+   <img width="670" alt="image" src="https://github.com/joel909/Smart_Watering_Device_iot_esp/assets/89447078/e6b19c03-ee8f-4646-ba92-8c54f6022fd7">
+
+   2.2) Setting up username and password to connect to the server. TO do this you can go to the access management tab and then create a username and password now you can replace your username and password in line 123 in the appropriate places 
+
+   <img width="602" alt="image" src="https://github.com/joel909/Smart_Watering_Device_iot_esp/assets/89447078/6187fd09-14c1-49f2-9f99-c4d388b25a27">
+
+YOU ARE DONE WITH SETTING UP YOUR MQTT SERVER 
+
+Now one last step is to set your utc off set according yo your time zone. the NTP always return GMT(GreenWich Merridian Time) if you dont know what it is all i can say is you should have studied in class. So check the difference between yor current time and the current GMT time and convert the difference from minutes or hours to seconds and then replace this value in line 46 . replace the value of 19800 and put yours
+
+
 
  
